@@ -1,0 +1,271 @@
+@font-face {
+	font-family: 'NexaBold';
+    src: url('../assets/fonts/nexaBold.otf');
+    font-weight: normal; font-style: normal;
+}
+
+@font-face {
+	font-family: 'NexaLight';
+	src: url('../assets/fonts/nexaLight.otf');
+	font-weight: normal; font-style: normal;
+}
+
+*{
+    font-family: 'NexaLight';
+}
+
+:root{
+    --color: white;
+    --transition: 200ms linear;
+}
+
+
+#myVideo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -1;
+}
+
+.content { 
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.home-logo {
+    width: 450px;
+}
+
+/*Button hover animations*/
+.btn-outer{
+    position: absolute;
+    bottom: 16%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: '';
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 3px;
+}
+
+.btn-outer::after,
+.btn-inner::after,
+.btn-inner-second::after,
+.btn-outer::before,
+.btn-inner::before,
+.btn-inner-second::before{
+    background: var(--color);
+    content: '';
+    position: absolute;
+    transition: var(--transition);
+}
+
+.btn-outer::after{
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 0;
+}
+.btn-inner::after{
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 1px;
+}
+.btn-inner-second::after{
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+}
+
+.btn-outer::before{
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 0;
+}
+.btn-inner::before{
+    top: 0;
+    right: 50%;
+    width: 0;
+    height: 1px;
+}
+.btn-inner-second::before{
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 1px;
+}
+
+
+.btn-outer:hover::after,
+.btn-outer:hover::before{
+    height: 100%;
+    transition: var(--transition);
+}
+
+.btn-outer:hover .btn-inner::after,
+.btn-outer:hover .btn-inner::before,
+.btn-outer:hover .btn-inner-second::after,
+.btn-outer:hover .btn-inner-second::before{
+    width: 50%;
+    transition: var(--transition);
+}
+
+.btn{
+    text-transform: uppercase;
+    padding: 17px 31px;
+    color: white;
+    margin: 0;
+    font-size: 10px;
+    letter-spacing: 3px;
+    transition: var(--transition);
+}
+.btn:hover{
+    background: white;
+    color: #353535;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.bottom-line{
+    content: '';
+    width: 1px;
+    background: rgba(255,255,255,0.4);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 18.8%;
+}
+.bottom-line:after{
+    background: var(--color);
+    content: '';
+    position: absolute;
+    transition: 200ms cubic-bezier(.55,.07,.28,.95);
+    width: 1px;
+    top: 0;
+    height: 0;
+}
+
+.bottom-line.hoveredLine::after{
+    height: 100%;
+    transition: 1s 20ms cubic-bezier(.55,.07,.28,.95);
+}
+
+.contact{
+    position: absolute;
+    bottom: 75px;
+    left: 15px;
+    color: white;
+    transform: rotate(-90deg);
+    text-transform: uppercase;  
+    font-size: 10px;  
+    letter-spacing: 4px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    cursor: pointer;
+}
+.contact:after{
+    position: absolute;
+    bottom: 0;
+    background: var(--color);
+    height: 1px;
+    content: '';
+    animation: contact-line-anim 1s 2s cubic-bezier(.55,.07,.28,.95);
+}
+@keyframes contact-line-anim{
+    0% {width: 0; right: 0}
+    50% {width: 100%}
+    100% {width: 0; left: 0}
+}
+
+.contact-menu{
+    width: 100%;
+    background: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 100ms ease-in-out;
+    animation: menu-anim 500ms cubic-bezier(.55,.07,.28,.95) forwards;
+    text-align: center;
+    color: #353535;
+    font-family: 'NexaBold';
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2% 0;
+    letter-spacing: 2px;
+}
+@keyframes menu-anim{
+    from {height: 0}
+    to { height: 200px}
+}
+@keyframes menu-reverse-anim{
+    from { height: 200px}
+    to { height: 0}
+}
+.hidden{
+    display: none;
+}
+.visuallyhidden {
+    opacity: 0;
+}
+.anim-reverse{
+    animation: menu-reverse-anim 500ms cubic-bezier(.55,.07,.28,.95) forwards;
+}
+
+.icon{
+    width: 30px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+.icon:hover{
+    opacity: 0.8;
+    transition: var(--transition);
+}
+.contact-desc{
+    margin: 20px 0;
+    transition: var(--transition);
+}
+.contact-desc span{
+    margin-bottom: 9px;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    transition: var(--transition);
+}
+.contact-desc span::after,
+.contact-desc span::before{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: black;
+    transition: var(--transition);
+}
+.contact-desc span::after{
+    left: 50%;
+}
+.contact-desc span::before{
+    right: 50%;
+}
+.contact-desc span:hover::after,
+.contact-desc span:hover::before{
+    width: 50%;
+    transition: var(--transition);
+}
+
+.contact-email input{
+    background: #E4E4E4;
+    padding: 10px 30px;
+    border: none;
+    width: 320px;
+    text-align: center;
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
