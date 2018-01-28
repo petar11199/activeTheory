@@ -30,3 +30,16 @@ btnOuter.addEventListener('mouseenter', () => {
 btnOuter.addEventListener('mouseleave', () => {
     line.className = 'bottom-line';
 })
+
+// Loader
+
+  var loader = document.querySelector('.loader');
+  var number = document.querySelector('.number');
+
+  setTimeout(() => {
+    number.classList.add('number-opacity');
+  }, 1000);
+  setTimeout(() => {
+    loader.classList.add('loader-opacity');
+  }, 1500);
+
