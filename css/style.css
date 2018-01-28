@@ -182,7 +182,7 @@
     background: var(--color);
     height: 1px;
     content: '';
-    animation: contact-line-anim 1s 2s cubic-bezier(.55,.07,.28,.95);
+    animation: contact-line-anim 1s 3s cubic-bezier(.55,.07,.28,.95);
 }
 @keyframes contact-line-anim{
     0% {width: 0; right: 0}
@@ -197,7 +197,7 @@
     bottom: 0;
     left: 0;
     transition: 100ms ease-in-out;
-    animation: menu-anim 500ms 2s cubic-bezier(.55,.07,.28,.95) forwards;
+    animation: menu-anim 500ms cubic-bezier(.55,.07,.28,.95) forwards;
     text-align: center;
     color: #353535;
     font-family: 'NexaBold';
@@ -221,7 +221,7 @@
     opacity: 0;
 }
 .anim-reverse{
-    animation: menu-reverse-anim 500ms 2s cubic-bezier(.55,.07,.28,.95) forwards;
+    animation: menu-reverse-anim 500ms cubic-bezier(.55,.07,.28,.95) forwards;
 }
 
 .icon{

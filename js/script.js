@@ -42,4 +42,7 @@ btnOuter.addEventListener('mouseleave', () => {
   setTimeout(() => {
     loader.classList.add('loader-opacity');
   }, 1500);
+  setTimeout(() => {
+      loader.style.display = 'none';
+  }, 4000);
 
