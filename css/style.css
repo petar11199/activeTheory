@@ -24,8 +24,6 @@
     --color: white;
     --transition: 200ms linear;
 }
-
-
 #myVideo {
     position: absolute;
     right: 0;
@@ -33,6 +31,7 @@
     min-width: 100%; 
     min-height: 100%;
     z-index: -1;
+    filter: brightness(40%);
 }
 
 .content { 
@@ -41,10 +40,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    animation: home-content 3s 4s ease-in backwards;
 }
 
 .home-logo {
     width: 450px;
+    opacity: 0.8;
 }
 
 /*Button hover animations*/
@@ -182,7 +183,7 @@
     background: var(--color);
     height: 1px;
     content: '';
-    animation: contact-line-anim 1s 3s cubic-bezier(.55,.07,.28,.95);
+    animation: contact-line-anim 1s 7s cubic-bezier(.55,.07,.28,.95);
 }
 @keyframes contact-line-anim{
     0% {width: 0; right: 0}
@@ -205,14 +206,15 @@
     font-weight: bold;
     padding: 2% 0;
     letter-spacing: 2px;
+    overflow: hidden;
 }
 @keyframes menu-anim{
-    from {height: 0}
+    from {height: 0; line-height: 0; padding: 0}
     to { height: 200px}
 }
 @keyframes menu-reverse-anim{
     from { height: 200px}
-    to { height: 0}
+    to { height: 0px; line-height: 0; padding: 0}
 }
 .hidden{
     display: none;
@@ -311,19 +313,19 @@
     content: '';
 }
 .block:nth-child(1){
-    animation: first 1.5s 2s cubic-bezier(1,.01,.28,.95) forwards;
+    animation: first 1s 2s cubic-bezier(1,.01,.28,.95) forwards;
 }
 .block:nth-child(2){
-    animation: second 1.5s 1.5s cubic-bezier(1,.01,.28,.95) forwards;
+    animation: second 1s 1.5s cubic-bezier(1,.01,.28,.95) forwards;
 }
 .block:nth-child(3){
-    animation: third 1.5s 2s cubic-bezier(1,.01,.28,.95) forwards;
+    animation: third 1s 2s cubic-bezier(1,.01,.28,.95) forwards;
 }
 .block:nth-child(4){
-    animation: forth 1.5s 2s cubic-bezier(1,.01,.28,.95) forwards;
+    animation: forth 1s 2s cubic-bezier(1,.01,.28,.95) forwards;
 }
 .block:nth-child(5){
-    animation: fifth 1.5s 2.5s cubic-bezier(1,.01,.28,.95) forwards;
+    animation: fifth 1s 2.5s cubic-bezier(1,.01,.28,.95) forwards;
 }
 
 @keyframes first{
@@ -355,7 +357,7 @@
 
 @keyframes loader-opacity{
     from{ background: black}
-    to{ background: rgba(0,0,0,0.2);}
+    to{ background: rgba(0,0,0,0);}
 }
 .number-opacity{
     transition: 500ms ease;
@@ -365,4 +367,40 @@
 @keyframes number-opacity{
     from{ opacity: 1}
     to{ opacity: 0}
+}
+
+.home-content{
+    animation: home-content 3s 4s ease-in backwards;
+    transition: 1.5s ease-in-out;
+}
+@keyframes home-content {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+.home-content-opacity{
+    opacity: 0.3;
+    transition: 1.5s ease-in-out;
+}
+
+
+.contact-big-title{
+    font-size: 34vh;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #E8E8E8;
+    font-family: 'Muncie';
+    font-weight: 100;
+    letter-spacing: 18px;
+    opacity: 0.8;
+    z-index: 0;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+    user-select: none;
 }

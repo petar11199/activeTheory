@@ -14,7 +14,7 @@ contactMenu.addEventListener('mouseleave', () => {
     setTimeout(() => {
         contactMenu.classList.add('visuallyhidden');
         contactMenu.classList.add('hidden'); 
-    }, 330);
+    }, 600);
 });
 
 
@@ -33,16 +33,35 @@ btnOuter.addEventListener('mouseleave', () => {
 
 // Loader
 
-  var loader = document.querySelector('.loader');
-  var number = document.querySelector('.number');
+var loader = document.querySelector('.loader');
+var number = document.querySelector('.number');
 
-  setTimeout(() => {
+setTimeout(() => {
     number.classList.add('number-opacity');
-  }, 1000);
-  setTimeout(() => {
+}, 1000);
+
+setTimeout(() => {
     loader.classList.add('loader-opacity');
-  }, 1500);
-  setTimeout(() => {
-      loader.style.display = 'none';
-  }, 4000);
+}, 1500);
+
+setTimeout(() => {
+    loader.style.display = 'none';
+}, 4000);
+
+
+// Opacity ako ne pomeri mis
+
+var timeout;
+var homeContent = document.querySelector('.home-content');
+
+setTimeout(() => {
+document.onmousemove = function(){
+    clearTimeout(timeout);
+    homeContent.classList.remove('home-content-opacity'); 
+    
+    timeout = setTimeout(function(){
+        homeContent.classList.add('home-content-opacity'); 
+        }, 1500);
+    }         
+}, 7000);
 
