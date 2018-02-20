@@ -2,11 +2,26 @@
 
 var contact = document.querySelector('.contact');
 var contactMenu = document.querySelector('.contact-menu');
+var items = document.querySelectorAll('.contact-desc span');
 
 contact.addEventListener('mouseenter', () => {
     contactMenu.classList.remove('anim-reverse');
     contactMenu.classList.remove('hidden');
     contactMenu.classList.remove('visuallyhidden'); 
+
+    for ( var i=0; i < items.length; i++ ) {
+        var toggleItemMove = getToggleItemMove(i);
+        setTimeout( toggleItemMove, i * 50 );
+      }
+    
+    function getToggleItemMove(i) {
+      var item = items[i];
+      return function() {
+        item.classList.toggle('is-moved');
+      }
+    }
+    
+
 });
 
 contactMenu.addEventListener('mouseleave', () => {
@@ -16,6 +31,8 @@ contactMenu.addEventListener('mouseleave', () => {
         contactMenu.classList.add('hidden'); 
     }, 600);
 });
+
+
 
 
 // Hover za donju liniju ispod dugmeta
@@ -65,3 +82,21 @@ document.onmousemove = function(){
     }         
 }, 7000);
 
+
+// Klik na dugme View Work
+
+var btn = document.querySelector('.btn');
+var content = document.querySelector('.content');
+var myVideo = document.getElementById('myVideo');
+var home = document.querySelector('.home');
+var work = document.querySelector('.work');
+
+btn.addEventListener('click', () => {
+    homeContent.classList.add('visuallyhidden');
+    content.classList.add('visuallyhidden');
+    setTimeout(() => {
+        homeContent.classList.add('hidden');
+        content.classList.add('hidden');
+        myVideo.classList.add('visuallyhidden');
+    }, 2000);
+});

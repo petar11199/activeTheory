@@ -19,10 +19,13 @@
 *{
     font-family: 'NexaLight';
 }
+body,html {
+    background: black;
+}
 
 :root{
     --color: white;
-    --transition: 200ms linear;
+    --transition: 170ms linear;
 }
 #myVideo {
     position: absolute;
@@ -161,7 +164,7 @@
 
 .bottom-line.hoveredLine::after{
     height: 100%;
-    transition: 1s 20ms cubic-bezier(.55,.07,.28,.95);
+    transition: 400ms 20ms cubic-bezier(.55,.07,.28,.95);
 }
 
 .contact{
@@ -218,9 +221,11 @@
 }
 .hidden{
     display: none;
+    transition: var(--transition);
 }
 .visuallyhidden {
     opacity: 0;
+    transition: var(--transition);
 }
 .anim-reverse{
     animation: menu-reverse-anim 500ms cubic-bezier(.55,.07,.28,.95) forwards;
@@ -272,6 +277,7 @@
     background: #E4E4E4;
     padding: 10px 30px;
     border: none;
+    max-width: 320px;
     width: 320px;
     text-align: center;
     letter-spacing: 2px;
@@ -403,4 +409,31 @@
         -moz-user-select: none;
         -ms-user-select: none;
     user-select: none;
+}
+
+.is-moved {
+    animation: stagger 1s ease;
+}
+@keyframes stagger {
+    from {margin-bottom: 35px; opacity: 0}
+    to {margin-bottom: 9px; opacity: 1}
+}
+
+
+
+
+/* MEDIA */
+@media (max-width: 575px) {
+    .home-logo {
+        width: 100%;
+    }
+    .contact-big-title {
+        font-size: 19vh;
+    }
+    .contact-email {
+        padding: 0 20px;
+    }
+    .contact-email input {
+       width: 240px;
+    }
 }
