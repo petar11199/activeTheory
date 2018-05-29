@@ -1,4 +1,3 @@
-- WORK IN PROGRESS -
 
 Replicating Active Therory website  / https://activetheory.net/home
 
