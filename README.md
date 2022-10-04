@@ -1,3 +1,6 @@
+**!  OLD PROJECT  !**
+--
+
 NOTE: Active Theory website was changed. This repo is depricated.
 
 Replicating Active Therory website. Only landing page.  / https://activetheory.net/home
